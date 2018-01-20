@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	{{>head}}
+</head>
+    
+<body class=" ">
+    <a id="start"></a>
+    {{>transparent-nav}}
+    <div class="main-container">
+    <section class="height-100 imagebg text-center" data-overlay="4">
+                <div class="background-image-holder">
+                    <img alt="background" src="img/inner-6.jpg" />
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-sm-7 col-md-5">
+                            <h2>Login to continue</h2>
+                            <p class="lead">
+                                Welcome back, sign in with your existing Stack account credentials
+                            </p>
+                            <form action="/auth/login" method="post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="text" name="username" placeholder="Username" />
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="password" name="password" placeholder="Password" />
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class="btn btn--primary type--uppercase" type="submit">Login</button>
+                                    </div>
+                                </div>
+                                <!--end of row-->
+                            </form>
+                            <span class="type--fine-print block">Dont have an account yet?
+                                <a href="/create">Create account</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+        </div>
+        <!--<div class="loader"></div>-->
+        <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+            <i class="stack-interface stack-up-open-big"></i>
+        </a>
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/flickity.min.js"></script>
+        <script src="js/easypiechart.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/datepicker.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/ytplayer.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/granim.min.js"></script>
+        <script src="js/jquery.steps.min.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/spectragram.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>
+        
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	{{>head}}
+</head>
+
+<body>
+    <a id="start"></a>    
+	{{>nav}}
+	<div class="main-container">
+
+        <section class="space--sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                        <div class="masonry masonry-blog-list">
+                            <div class="masonry__container">
+                                <h1 class="text-center">Blog Posts</h1>
+                                <hr />
+                            	{{#posts}}
+                                <article class="">
+                                    <div class="article__title text-center">
+                                        <a href="/post/{{slug}}">
+                                            <h2>{{title}}</h2>
+                                        </a>
+                                        <span>{{dateString}}</span><br />
+                                        <span>
+                                            tags: {{tags}}
+                                        </span>
+                                    </div>
+                                    <!--end article title-->
+                                    <div class="article__body">
+                                        <a href="/post/{{slug}}">
+                                            <img alt="Image" class="img-responsive center-block" src="{{image}}" />
+                                        </a>
+                                        <p class="text-center">
+                                            {{preview}}... <a href="/post/{{slug}}">Continue reading &raquo;</a>
+                                        </p>
+                                        
+                                    </div>
+                                </article>
+                                {{/posts}}
+                                
+                            <!--end of masonry container-->
+                            <div class="pagination">
+                                <a class="pagination__prev" href="#" title="Previous Page">&laquo;</a>
+                                <ol>
+                                    <li>
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li class="pagination__current">3</li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                </ol>
+                                <a class="pagination__next" href="#" title="Next Page">&raquo;</a>
+                            </div>
+                        </div>
+                        <!--end masonry-->
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" style="text-align:center;margin-bottom:48px">
+            	
+                <div class="grey-box">
+					<h3>Create Post</h3>
+					<hr />
+
+					<form action="/" method="POST">
+						<input id="blog-title" class="form-control" type="text" name="title" placeholder="Title" /><br />
+						<input id="blog-tags" class="form-control" type="text" name="tags" placeholder="Tags" /><br />
+						<textarea id="blog-text" class="form-control" name="text" placeholder="Text"></textarea><br />
+                        <label class="btn btn-info">
+                           <input id="blog-image" class="file" type="file" accept="image/*" />
+                           Upload Image
+                        </label>
+                        <input id="image-url" class="form-control" type="text" name="image" style="display:none" />
+						<button id="blog-submit" type="submit" class="btn btn--sm btn--primary type--uppercase">Create Post</button>
+					</form>
+				</div>
+            </div>
+        </div>
+
+        {{>footer-light}}
+
+	</div>
+    
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/granim.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>    
+    <script src="js/isotope.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+	<!-- Turbo library imports: jQuery, Turbo CDN, sample app.js.
+	NOTE: These should be minified in a build script -->
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/dropzone.js"></script> 
+	<script type="text/javascript" src="https://cdn.turbo360-dev.com/dist/turbo.min.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript">
+		$(function(){
+            var turbo = Turbo({
+                site_id: '5a511633b06cbe0014f4b6eb'
+            })
+			$('#blog-submit').click(function(event){
+				event.preventDefault()
+                var tags = $('#blog-tags').val().split(',').map(function(item) {
+                    return item.trim();
+                });
+                console.log(tags)
+				var post = {
+					title: $('#blog-title').val(),
+					text: $('#blog-text').val(),
+                    tags: JSON.stringify(tags),
+                    image: $('#image-url').val()
+				}
+
+				$.ajax({
+					url : '/api/post',
+					type: 'POST',
+					data : post,
+					success: function(data, textStatus, jqXHR){
+						if (data.confirmation != 'success'){
+							alert('Error: ' + data.message)
+							return
+						}
+
+						window.location.href = '/blog'
+					},
+					error: function (jqXHR, textStatus, err){
+						alert('Error: ' + err.message)
+					}
+				})
+			})
+            $('#blog-image').click(function(event){
+                event.preventDefault()
+                $('#blog-submit').prop('disabled', true);
+                turbo.uploadFile(function(err, data){
+                    if (err) {
+                        alert('Error: ' + err.message)
+                        return
+                    }
+                    $('#image-url').attr("value", data.result.url)
+                    $('#blog-submit').prop('disabled', false);
+                })
+            })
+		})
+	</script>
+</body>
+</html>

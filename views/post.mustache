@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	{{>head}}
+</head>
+
+<body class=" ">
+	<a id="start"></a>
+	{{>nav}}
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+                            <article>
+                                <div class="article__title text-center">
+                                    <h1 class="h2">{{post.title}}</h1>
+                                    <span>{{post.dateString}} </span>
+                                    <br />
+                                    <span>tags: {{post.tags}}</span>
+                                </div>
+                                <!--end article title-->
+                                <div class="article__body">
+                                    <img alt="Image" class="img-responsive center-block" src="{{post.image}}" />
+                                    <p>
+                                        {{post.text}}
+                                    </p>
+                                </div>
+                                <div class="article__share text-center">
+                                    <a class="btn bg--facebook btn--icon" href="#">
+                                        <span class="btn__text">
+                                            <i class="socicon socicon-facebook"></i>
+                                            Share on Facebook
+                                        </span>
+                                    </a>
+                                    <a class="btn bg--twitter btn--icon" href="#">
+                                        <span class="btn__text">
+                                            <i class="socicon socicon-twitter"></i>
+                                            Share on Twitter
+                                        </span>
+                                    </a>
+                                </div>
+                            </article>
+                            <!--end item-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            <section class="text-center space--sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                            <div class="boxed boxed--lg bg--dark subscribe-form-1">
+                                <h3>Get our latest content in your inbox</h3>
+                                <h5>Join over 20,000 satisfied customers</h5>
+                                <div class="col-sm-8 col-sm-offset-2 text-left">
+                                    <form>
+                                        <input type="text" name="name" placeholder="Your Name" />
+                                        <input type="email" name="email" placeholder="Email Address" />
+                                        <div class="input-checkbox">
+                                            <input type="checkbox" name="agree" />
+                                            <label></label>
+                                        </div>
+                                        <span>I have read and agree to the
+                                            <a href="#">terms and conditions</a>
+                                        </span>
+                                        <button type="submit" class="btn btn--primary type--uppercase">Subscribe To Newsletter</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            <section class="space--sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            
+
+		</div>
+	</div>
+
+	{{>footer-light}}
+
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/typed.min.js"></script>
+    <script src="/js/granim.min.js"></script>
+    <script src="/js/smooth-scroll.min.js"></script>    
+    <script src="/js/isotope.min.js"></script>
+    <script src="/js/scripts.js"></script>
+
+	<!-- Turbo library imports: jQuery, Turbo CDN, sample app.js.
+	NOTE: These should be minified in a build script -->
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/dropzone.js"></script> 
+	<script type="text/javascript" src="https://cdn.turbo360-dev.com/dist/turbo.min.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+
+</body>
+</html>

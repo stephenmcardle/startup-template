@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	{{>head}}
+</head>
+    
+<body class=" " data-smooth-scroll-offset='64'>
+    <a id="start"></a>
+    {{>nav}}
+    <div class="main-container">
+        <section class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h6 class="type--uppercase">Introducing BizHost</h6>
+                        <div class="typed-headline">
+                            <span class="h1 inline-block">A service for</span>
+                            <span class="h1 inline-block typed-text typed-text--cursor color--primary" data-typed-strings="discovering businesses.,connecting with locals.,viewing listings., reading blog posts.">reading blog posts.</span>
+                        </div>
+                        <p class="lead">
+                            And a rapidly expanding startup. 
+                        </p>
+                        <a class="btn btn--primary type--uppercase inner-link" href="#listings">
+                            <span class="btn__text">
+                                View Listings
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section>
+	        <a id="listings"></a>
+	        <div class="container">
+	                <div class="row">
+	                    <div class="col-xs-6">
+	                        <h4>Listings</h4>
+	                    </div>
+	                    <div class="col-xs-6 text-right">
+	                        <a href="/listings">View more</a>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                	{{#listings}}
+	                    <div class="col-sm-3 col-xs-6">
+	                        <a href="/listing/{{slug}}" class="feature">
+	                            <img alt="Image" src="{{image}}" />
+	                            <h5 class="mb--0">{{name}}</h5>
+	                            <div>{{description}}</div>
+	                        </a>
+	                    </div>
+	                    {{/listings}}
+	                    
+	                </div>
+	        </div>
+    	</section>
+        
+        <section class="bg--secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h4>Popular Locations</h4>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <a href="#">View more</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-6">
+                            <a href="#" class="block">
+                                <div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                    <div class="background-image-holder">
+                                        <img alt="background" src="img/accom-5.jpg" />
+                                    </div>
+                                    <h4 class="pos-vertical-center">Sydney</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <a href="#" class="block">
+                                <div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                    <div class="background-image-holder">
+                                        <img alt="background" src="img/accom-6.jpg" />
+                                    </div>
+                                    <h4 class="pos-vertical-center">San Francisco</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <a href="#" class="block">
+                                <div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                    <div class="background-image-holder">
+                                        <img alt="background" src="img/accom-7.jpg" />
+                                    </div>
+                                    <h4 class="pos-vertical-center">Berlin</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+
+            <section class="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="heading-block">
+                                <h4>Featured Profiles</h4>
+                                <p>BizHost's top contributors<p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="slideshow-container">
+                                {{#users}}
+                                <div class="mySlides fade grey-box feature">
+                                    <a href="/profile/{{username}}">
+                                        <img src="{{image}}" class="center-block" style="height:300px;margin-bottom:4%;">
+                                    </a>
+                                    <div class="feature__body boxed boxed--border text-center">
+                                        <a href="/profile/{{username}}">
+                                            <h5>{{firstName}} {{lastName}}</h5>
+                                        </a>
+                                        {{description}}<br />
+                                        <a href="/profile/{{username}}">
+                                            View Profile
+                                        </a>
+                                    </div>
+                                </div>
+                                {{/users}}
+
+                                <!-- Next and previous buttons -->
+                              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+                        </div>
+                        <!--end slider-->
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+
+            <section class="feature-large switchable bg--secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <img alt="Image" class="border--round box-shadow-wide" src="img/inner-5.jpg" />
+                        </div>
+                        <div class="col-md-5 col-sm-6">
+                            <div class="heading-block">
+                                <h2>Experience growth with BizHost</h2>
+                            </div>
+                            <div class="text-block">
+                                <h5>Find unique experiences</h5>
+                                <p>
+                                    Combine blocks from a range of categories to build pages that are rich in visual style and interactivity.
+                                </p>
+                            </div>
+                            <div class="text-block">
+                                <h5>Book with confidence</h5>
+                                <p>
+                                    Stack is built with customization and ease-of-use at its core &mdash; consistent markup and useful data attribute modifiers make rapid development simple.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+        <section class="text-center bg--secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <h2>Why you'll love BizHost</h2>
+                        <p class="lead">
+                            Whether you’re building a welcome mat for your SaaS or a clean, corporate portfolio, Stack has your design and functionality needs covered.
+                        </p>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section class="bg--secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon icon-Wizard color--primary"></i>
+                            <div class="feature__body">
+                                <h5>140+ Styled Pages</h5>
+                                <p>
+                                    Jump start your project with Stack's diverse array of beautiful pre-built templates
+                                </p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon icon-Clock-Back color--primary"></i>
+                            <div class="feature__body">
+                                <h5>Time Saving Components</h5>
+                                <p>
+                                    Save time with over 290 carefully styled components designed to showcase your content
+                                </p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon icon-Duplicate-Window color--primary"></i>
+                            <div class="feature__body">
+                                <h5>Visual Page Building</h5>
+                                <p>
+                                    Construct mockups or production-ready pages in-browser with Variant Page Builder
+                                </p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon icon-Coding color--primary"></i>
+                            <div class="feature__body">
+                                <h5>Clever Markup</h5>
+                                <p>
+                                    With fully documented elements pages that help you customize Stack to your needs
+                                </p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon icon-Laptop-Phone color--primary"></i>
+                            <div class="feature__body">
+                                <h5>Responsive Design</h5>
+                                <p>
+                                    Stack scales intuitively for all devices. Delighting your users no matter the screen
+                                </p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="feature feature-2 boxed boxed--border">
+                            <i class="icon icon-Life-Jacket color--primary"></i>
+                            <div class="feature__body">
+                                <h5>Personal Support</h5>
+                                <p>
+                                    Six months of included, premium support with a dedicated support forum
+                                </p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <section class="switchable feature-large bg--secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="video-cover border--round box-shadow-wide">
+                            <div class="background-image-holder">
+                                <img alt="image" src="img/inner-6.jpg" />
+                            </div>
+                            <div class="video-play-icon"></div>
+                            <iframe data-src="https://www.youtube.com/embed/6p45ooZOOPo?autoplay=1" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <!--end video cover-->
+                    </div>
+                    <div class="col-sm-6 col-md-5">
+                        <div class="switchable__text">
+                            <h2>Build your site in-browser with modular interface blocks</h2>
+                            <p class="lead">
+                                The included Variant Page Builder allows you to quickly assemble and customize pages in the comfort of your browser. Variant outputs pure HTML &mdash; No junk styles or classes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        
+        {{>footer}}
+
+    </div>
+    <!--<div class="loader"></div>-->
+    <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+        <i class="stack-interface stack-up-open-big"></i>
+    </a>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/granim.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/flickity.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/slideshow.js"></script>
+</body>
+</html>

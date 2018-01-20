@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    {{>head}}
+</head>
+    
+<body class=" ">
+    <a id="start"></a>
+    {{>nav}}
+
+    <div class="main-container">
+            <section class="imageblock switchable feature-large height-100">
+                <div class="imageblock__content col-md-6 col-sm-4 pos-right">
+                    <div class="background-image-holder">
+                        <img alt="image" src="img/inner-7.jpg" />
+                    </div>
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-7">
+                            <h2>Create a Stack account</h2>
+                            <p class="lead">Get started with a 14 day free trial, No credit card required &mdash; cancel at any time.</p>
+                            <form action="/auth/register" method="post">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="text" name="firstName" placeholder="First Name" />
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <input type="text" name="lastName" placeholder="Last Name" />
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <input type="text" name="username" placeholder="Username" />
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <input type="email" name="email" placeholder="Email Address" />
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <input type="password" name="password" placeholder="Password" />
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button type="submit" class="btn btn--primary type--uppercase">Create Account</button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <span class="type--fine-print">By signing up, you agree to the
+                                            <a href="#">Terms of Service</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--end row-->
+                            </form>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+        </div>
+        <!--<div class="loader"></div>-->
+        <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+            <i class="stack-interface stack-up-open-big"></i>
+        </a>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/flickity.min.js"></script>
+        <script src="js/easypiechart.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/datepicker.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/ytplayer.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/granim.min.js"></script>
+        <script src="js/jquery.steps.min.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/spectragram.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
